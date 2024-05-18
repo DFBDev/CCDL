@@ -1,3 +1,11 @@
+@keyframes spin {
+    0% {
+        transform:rotate(0deg)
+    }
+    100% {
+        transform:rotate(360deg);
+    }
+}
 body {
     display:flex;
     justify-content:center;
@@ -41,6 +49,13 @@ input {
 label {
     font-family:Oswald;
 }
+#submitHolder {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:70px;
+    gap:0.6rem;
+}
 #submit {
     text-align:center;
     margin-top:1rem;
@@ -52,4 +67,12 @@ label {
     color:white;
     cursor:pointer;
     font-family:Oswald;
+    transition:all 0.1s ease-in-out;
+    min-width:150px;
+}
+#submit:hover {
+    transform:scale(1.02);
+}
+#loadingIcon {
+    animation:spin 1s infinite ease-in-out;
 }
